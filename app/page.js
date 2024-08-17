@@ -114,25 +114,22 @@ export default function Home() {
           body: JSON.stringify(data),
         }
       );
-
+  
       if (!response.ok) {
         throw new Error("Failed to transfer token");
       }
-
+  
       const result = await response.json();
-      console.log("Transfered Token:", result);
-      // const walletAddress = result.result.wallet.wallet_address;
-      // //   console.log("Wallet address:", walletAddress);
-      // // Store the wallet address in sessionStorage
-      // sessionStorage.setItem("walletAddress", walletAddress);
-
+  
+      const walletAddress = result?.result?.wallet?.wallet_address;
+  
       if (!walletAddress) {
         throw new Error("Wallet address not found in the response");
       }
-
+  
       toast.success(
-        `🦄 Token transfered successfully!
-        Wallet address: ${walletAddress}`,
+        `🦄 Token transferred successfully!
+         Wallet address: ${walletAddress}`,
         {
           position: "bottom-center",
           autoClose: 5000,
@@ -146,8 +143,8 @@ export default function Home() {
       );
       closeModal();
     } catch (error) {
-      console.error("Error transfering token:", error);
-      toast.error("🦄 Error transfering token", {
+      console.error("Error transferring token:", error);
+      toast.error("🦄 Error transferring token", {
         position: "bottom-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -157,10 +154,10 @@ export default function Home() {
         progress: undefined,
         theme: "light",
       });
-      // Don't send the request if there's an error
       return;
     }
   };
+  
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center ">

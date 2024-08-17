@@ -23,8 +23,8 @@ const Header = () => {
         {
           method: "POST",
           headers: {
-            client_id: process.env.NEXT_PUBLIC_CLIENT_ID,
-            client_secret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
+            "client_id": process.env.NEXT_PUBLIC_CLIENT_ID,
+            "client_secret": process.env.NEXT_PUBLIC_CLIENT_SECRET,
             "Content-Type": "application/json",
           },
           body: JSON.stringify(data),

@@ -69,3 +69,6 @@ node_modules/
 .next/
 .swc/
 .*.env
+.env
+next-env.d.ts
+.DS_Store
