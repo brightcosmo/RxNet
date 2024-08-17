@@ -138,7 +138,7 @@ const Header = () => {
     <header className="w-full py-6 lg:py-4 relative border-b">
       <div className="container mx-auto px-8 lg:px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <h1 className="text-xl font-bold">Maschain Demo</h1>
+          <h1 className="font-bold text-xl lg:text-2xl">Maschain Demo</h1>
         </div>
         <div className="flex items-center space-x-4">
           <button

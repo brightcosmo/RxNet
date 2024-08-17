@@ -158,13 +158,12 @@ export default function Home() {
     }
   };
   
-
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center ">
-      <h1 className="font-bold text-2xl uppercase text-center">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+      <h1 className="font-extrabold text-4xl lg:text-6xl uppercase text-center text-white drop-shadow-lg z-0">
         Maschain API Workshop Demo
       </h1>
-      <p className="text-sm text-gray-500 lowercase font-normal mt-4">
+      <p className="text-base lg:text-lg text-gray-100 lowercase font-medium mt-6">
         {walletAddress ? (
           <>
             {`Connected: ${walletAddress.slice(0, 6)}...${walletAddress.slice(
@@ -173,20 +172,20 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center">
               <button
                 onClick={clearWalletAddress}
-                className="w-full mt-4 border rounded-md py-2 px-4 hover:bg-black hover:text-white transition-all duration-300"
+                className="w-full mt-4 border-2 border-white rounded-md py-2 px-6 text-lg lg:text-xl font-semibold text-white hover:bg-white hover:text-black transition-all duration-300"
               >
                 Disconnect Wallet
               </button>
               <button
                 onClick={openMintModal}
-                className="mt-4 border w-full rounded-md py-2 px-4 hover:bg-black hover:text-white transition-all duration-300"
+                className="mt-4 border-2 w-full rounded-md py-2 px-6 text-lg lg:text-xl font-semibold text-white hover:bg-white hover:text-black transition-all duration-300"
               >
                 Mint Token
               </button>
-
+  
               <button
                 onClick={openTransferModal}
-                className="mt-4 w-full border rounded-md py-2 px-4 hover:bg-black hover:text-white transition-all duration-300"
+                className="mt-4 w-full border-2 rounded-md py-2 px-6 text-lg lg:text-xl font-semibold text-white hover:bg-white hover:text-black transition-all duration-300"
               >
                 Transfer Token
               </button>
@@ -239,5 +238,5 @@ export default function Home() {
         theme="light"
       />
     </main>
-  );
+  );  
 }
