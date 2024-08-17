@@ -2,15 +2,15 @@
 import React, { useState } from "react";
 
 const TransferTokenModal = ({ onSubmit, onClose }) => {
-  const [walletAddress, setWalletAddress] = useState("");
+  const [wallet_address, setWalletAddress] = useState("");
   const [to, setTo] = useState("");
   const [amount, setAmount] = useState("");
-  const contractAddress = "0xC523A5A3E2A037c9c9fd81fB962db1f87A1ea4A3";
-  const fallbackUrl = "https://maschainworkshop.vercel.app/";
+  const contract_address = "0xC523A5A3E2A037c9c9fd81fB962db1f87A1ea4A3";
+  const callback_url = "https://maschainworkshop.vercel.app/";
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ walletAddress, to, amount, contractAddress, fallbackUrl });
+    onSubmit({ wallet_address, to, amount, contract_address, callback_url });
   };
 
   return (
@@ -25,7 +25,7 @@ const TransferTokenModal = ({ onSubmit, onClose }) => {
             <input
               type="text"
               id="walletAddress"
-              value={walletAddress}
+              value={wallet_address}
               onChange={(e) => setWalletAddress(e.target.value)}
               className="w-full px-3 py-2 border rounded-md"
               required
@@ -36,7 +36,7 @@ const TransferTokenModal = ({ onSubmit, onClose }) => {
               Recipient Address
             </label>
             <input
-              type="email"
+              type="text"
               id="to"
               value={to}
               onChange={(e) => setTo(e.target.value)}
@@ -64,19 +64,19 @@ const TransferTokenModal = ({ onSubmit, onClose }) => {
             <input
               type="text"
               id="contractAddress"
-              value={contractAddress}
+              value={contract_address}
               className="w-full px-3 py-2 border rounded-md"
               required
             />
           </div>
           <div className="mb-4 hidden">
-            <label htmlFor="fallbackUrl" className="block mb-2">
-              Fallback URL
+            <label htmlFor="callbackUrl" className="block mb-2">
+              Callback URL
             </label>
             <input
               type="text"
-              id="fallbackUrl"
-              value={fallbackUrl}
+              id="callbackUrl"
+              value={callback_url}
               className="w-full px-3 py-2 border rounded-md"
               required
             />
