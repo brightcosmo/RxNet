@@ -20,7 +20,7 @@ const TransferTokenModal = ({ onSubmit, onClose }) => {
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="walletAddress" className="block mb-2">
-              Wallet Address
+              Your Address
             </label>
             <input
               type="text"

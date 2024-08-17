@@ -135,10 +135,14 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full py-6 lg:py-4 relative border-b">
+    <header className="w-full py-8 lg:py-6 relative border-b">
       <div className="container mx-auto px-8 lg:px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <h1 className="font-bold text-xl lg:text-2xl">Maschain Demo</h1>
+        <img 
+            src="/rxnet_cropped.png" 
+            alt="Maschain Logo" 
+            className="h-10 lg:h-12" 
+          />        
         </div>
         <div className="flex items-center space-x-4">
           <button
