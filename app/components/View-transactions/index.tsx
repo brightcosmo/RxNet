@@ -31,7 +31,7 @@ const PrescriptionTable = () => {
   return (
     <div className="p-4">
       <div className="mb-4">
-        <label htmlFor="transactionHash" className="block mb-2">
+        <label htmlFor="transactionHash" className="block mb-2 text-base lg:text-lg text-black-100 font-medium mt-6">
           Enter Transaction Hash
         </label>
         <input

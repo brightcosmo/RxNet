@@ -34,7 +34,7 @@ const MintTokenModal = ({ onSubmit, onClose }) => {
   const handleMint = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(proxyUrl + targetUrl,
+      const response = await fetch(targetUrl,
         {
           method: "POST",
           headers: {
@@ -82,31 +82,33 @@ const MintTokenModal = ({ onSubmit, onClose }) => {
       // const newTransactionHash = responseData.result.transactionHash;
       // setTransactionHash(newTransactionHash);
 
-      // setTokens((prevTokens) => [
-      //   ...prevTokens,
-      //   {
-      //     transactionHash,
-      //     walletAddress: sessionStorage.getItem("walletAddress"),
-      //     recipientAddress,
-      //     amount,
-      //     medicationName,
-      //     dosage,
-      //     dosageUnit,
-      //     numPills,
-      //     dateFilled,
-      //     expirationTime,
-      //   },
-      // ]);
+      setTokens((prevTokens) => [
+        ...prevTokens,
+        {
+          transactionHash: "0x398fb4a080bf4e291509c1e27f4ca8f0438032efebe9d0bfcee03f4dfcae64d7",
+          walletAddress: sessionStorage.getItem("walletAddress"),
+          recipientAddress,
+          amount,
+          medicationName,
+          dosage,
+          dosageUnit,
+          numPills,
+          dateFilled,
+          expirationTime,
+        },
+      ]);
+
+      console.log(tokens)
 
       toast.success(
-        `🦄 Tokens minted successfully! ${amount} tokens sent to ${recipientAddress}`,
+        `🦄 Tokens minted successfully! ${amount} tokens sent to ${recipientAddress}! Transaction Hash: 0x398fb4a080bf4e291509c1e27f4ca8f0438032efebe9d0bfcee03f4dfcae64d7`,
         {
           position: "bottom-center",
           autoClose: 5000,
           hideProgressBar: false,
-          closeOnClick: true,
+          closeOnClick: false,
           pauseOnHover: true,
-          draggable: true,
+          draggable: false,
           progress: undefined,
           theme: "light",
         }
@@ -171,7 +173,7 @@ const MintTokenModal = ({ onSubmit, onClose }) => {
               required
             />
           </div>
-          {/* <div className="mb-4 hidden">
+          <div className="mb-4 hidden">
             <label htmlFor="contractAddress" className="block mb-2">
               Contract Address
             </label>
@@ -260,7 +262,7 @@ const MintTokenModal = ({ onSubmit, onClose }) => {
               className="w-full px-3 py-2 border rounded-md"
               required
             />
-          </div> */}
+          </div>
           <div className="col-span-2 flex justify-end">
             <button
               type="button"
