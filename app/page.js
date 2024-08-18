@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import MintTokenModal from "./components/Mint-token";
+import TransferTokenModal from "./components/Transfer-token"
 import PrescriptionTable from "./components/View-transactions";
 import { motion, AnimatePresence } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
@@ -11,6 +12,7 @@ export default function Home() {
 
   const [isMintModalOpen, setIsMintModalOpen] = useState(false);
   const [isTransferModalOpen, setIsTransferModalOpen] = useState(false);
+  const [tokens, setTokens] = useState([]);
 
   const openMintModal = () => {
     setIsMintModalOpen(true);
@@ -39,6 +41,8 @@ export default function Home() {
     sessionStorage.removeItem("walletAddress");
     setWalletAddress(null);
   };
+
+  console.log(tokens)
   
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-teal-300 via-cyan-400 to-blue-500">
@@ -64,6 +68,12 @@ export default function Home() {
               >
                 New Prescription
               </button>
+              <button
+                onClick={openTransferModal}
+                className="mt-4 border-2 w-full rounded-md py-2 px-6 text-lg lg:text-xl font-semibold text-white hover:bg-white hover:text-black transition-all duration-300"
+              >
+                View Prescriptions
+              </button>
             </div>
           </>
         ) : (
@@ -81,6 +91,24 @@ export default function Home() {
             <MintTokenModal
               // onSubmit={handleMintSubmit}
               onClose={closeMintModal}
+              tokens={tokens}
+              setTokens={setTokens}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {isTransferModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.1 }}
+          >
+            <TransferTokenModal
+              // onSubmit={handleMintSubmit}
+              onClose={closeTransferModal}
+              tokens={tokens}
             />
           </motion.div>
         )}

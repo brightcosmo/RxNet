@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const MintTokenModal = ({ onSubmit, onClose }) => {
+const MintTokenModal = ({ onSubmit, onClose, tokens, setTokens }) => {
   const [isMintModalOpen, setIsMintModalOpen] = useState(false);
   const [walletAddress, setWalletAddress] = useState("");
   const [recipientAddress, setRecipientAddress] = useState("");
@@ -15,7 +15,6 @@ const MintTokenModal = ({ onSubmit, onClose }) => {
   const [numPills, setNumPills] = useState("");
   const [dateFilled, setDateFilled] = useState("");
   const [expirationTime, setExpirationTime] = useState("");
-  const [tokens, setTokens] = useState([]);
   const [transactionHash, setTransactionHash] = useState<string | null>(null);
   const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   const targetUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/token/mint`;
