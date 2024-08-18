@@ -14,11 +14,6 @@ RxNet is a cutting-edge platform designed to tackle the rising misuse of prescri
 - **Addiction Prevention**: Tools and analytics to identify and prevent misuse of prescription drugs.
 - **Public Health Insights**: Aggregated data to support long-term health strategies.
 
-## Getting Started
+## Pitching Video
 
-To get started with RxNet, follow these steps:
-
-### Prerequisites
-
-- Node.js (version 14 or later)
-- npm (version 6 or later)
+https://youtu.be/6KLZUyNAn7k
