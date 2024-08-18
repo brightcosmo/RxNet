@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import MintTokenModal from "./components/Mint-token";
+import PrescriptionTable from "./components/View-transactions";
 import { motion, AnimatePresence } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -40,11 +41,11 @@ export default function Home() {
   };
   
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-teal-300 via-cyan-400 to-blue-500">
       <h1 className="font-extrabold text-4xl lg:text-6xl text-center text-white drop-shadow-lg z-0">
         The future of prescriptions.
       </h1>
-      <span className="text-base lg:text-lg text-gray-100 font-medium mt-6">
+      <div className="text-base lg:text-lg text-gray-100 font-medium mt-6">
         {walletAddress ? (
           <>
             {`Connected: ${walletAddress.slice(0, 6)}...${walletAddress.slice(
@@ -68,7 +69,7 @@ export default function Home() {
         ) : (
           "Hi Dr! Link a wallet to get started"
         )}
-      </span>
+      </div>
       <AnimatePresence>
         {isMintModalOpen && (
           <motion.div
@@ -84,6 +85,7 @@ export default function Home() {
           </motion.div>
         )}
       </AnimatePresence>
+      <PrescriptionTable />
       <ToastContainer
         position="bottom-center"
         autoClose={5000}
