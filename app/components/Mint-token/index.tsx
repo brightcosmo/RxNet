@@ -56,6 +56,8 @@ const MintTokenModal = ({ onSubmit, onClose }) => {
         throw new Error("Failed to mint tokens");
       }
 
+      console.log(response)
+
       fetch(callbackUrl, {
         method: 'POST',
         headers: {
