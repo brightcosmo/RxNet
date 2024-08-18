@@ -1,41 +1,24 @@
-# This is a project template for APUBCC Devmatch 2024 Hackathon
+# RxNet
 
-The purpose of this template is to facilitate new developers to quickly get a hands-on approach and start developing using Maschain's API.  
-Test it out [HERE](https://maschainworkshop.vercel.app/)
+![RxNet Logo](https://github.com/brightcosmo/RxNet/blob/master/public/rxnet_cropped.png)
 
-This project sets up the basic functions such as:
+## Overview
 
-1. Creating User Wallet
-2. Minting Token
-3. Transferring Token
+RxNet is a cutting-edge platform designed to tackle the rising misuse of prescription drugs among youth, both in Malaysia and globally. With increasing concerns about the security, transparency, and oversight of medication distribution, RxNet aims to bridge critical gaps, reducing addiction rates and enhancing public health outcomes.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Features
+
+- **Enhanced Security**: Safeguard prescription drug distribution with advanced security measures.
+- **Transparent Tracking**: Real-time tracking and auditing of medication distribution.
+- **User Access Control**: Manage and control access to prescription information effectively.
+- **Addiction Prevention**: Tools and analytics to identify and prevent misuse of prescription drugs.
+- **Public Health Insights**: Aggregated data to support long-term health strategies.
 
 ## Getting Started
 
-First, run the development server:
+To get started with RxNet, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Obtain Necessary Keys from Maschain
-
-Navigate to https://portal-testnet.maschain.com/ to get the necessary keys.
-
-In the .env.example file, replace the values with your own key, and rename the file to just ".env" or ".env.local"
-
-# Have fun building
-
-```bash
-Contact me or the team if you have any questions
-@OxBenjamintan - AKA LengzaiBen
-```
+- Node.js (version 14 or later)
+- npm (version 6 or later)
