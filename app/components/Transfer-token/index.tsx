@@ -1,102 +1,49 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 
-const TransferTokenModal = ({ onSubmit, onClose }) => {
-  const [wallet_address, setWalletAddress] = useState("");
-  const [to, setTo] = useState("");
-  const [amount, setAmount] = useState("");
-  const contract_address = "0xC523A5A3E2A037c9c9fd81fB962db1f87A1ea4A3";
-  const callback_url = "https://maschainworkshop.vercel.app/";
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit({ wallet_address, to, amount, contract_address, callback_url });
-  };
-
+const TransferTokenModal = ({ onClose, tokens }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center backdrop-blur-md">
-      <div className="bg-white p-8 rounded-lg shadow-lg lg:w-96 w-3/4">
-        <h2 className="text-2xl font-bold mb-8">Transfer Token</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="walletAddress" className="block mb-2">
-              Your Address
-            </label>
-            <input
-              type="text"
-              id="walletAddress"
-              value={wallet_address}
-              onChange={(e) => setWalletAddress(e.target.value)}
-              className="w-full px-3 py-2 border rounded-md"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="to" className="block mb-2">
-              Recipient Address
-            </label>
-            <input
-              type="text"
-              id="to"
-              value={to}
-              onChange={(e) => setTo(e.target.value)}
-              className="w-full px-3 py-2 border rounded-md"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="amount" className="block mb-2">
-              Amount
-            </label>
-            <input
-              type="text"
-              id="amount"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              className="w-full px-3 py-2 border rounded-md"
-              required
-            />
-          </div>
-          <div className="mb-4 hidden">
-            <label htmlFor="contractAddress" className="block mb-2">
-              Contract Address
-            </label>
-            <input
-              type="text"
-              id="contractAddress"
-              value={contract_address}
-              className="w-full px-3 py-2 border rounded-md"
-              required
-            />
-          </div>
-          <div className="mb-4 hidden">
-            <label htmlFor="callbackUrl" className="block mb-2">
-              Callback URL
-            </label>
-            <input
-              type="text"
-              id="callbackUrl"
-              value={callback_url}
-              className="w-full px-3 py-2 border rounded-md"
-              required
-            />
-          </div>
-          <div className="flex justify-end">
-            <button
-              type="button"
-              onClick={onClose}
-              className="mr-2 px-4 py-2 border rounded-md hover:bg-gray-100"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-            >
-              Transfer
-            </button>
-          </div>
-        </form>
+      <div className="bg-white p-8 rounded-lg shadow-lg lg:w-3/4 w-11/12 max-h-90vh overflow-auto">
+        <h2 className="text-2xl font-bold mb-4">Prescription Data</h2>
+        <table className="min-w-full bg-white border border-gray-300">
+          <thead>
+            <tr className="bg-gray-100">
+              <th className="py-2 px-4 border-b">Transaction Hash</th>
+              <th className="py-2 px-4 border-b">Doctor Address</th>
+              <th className="py-2 px-4 border-b">Patient Address</th>
+              <th className="py-2 px-4 border-b">Amount</th>
+              <th className="py-2 px-4 border-b">Medication</th>
+              <th className="py-2 px-4 border-b">Dosage</th>
+              <th className="py-2 px-4 border-b">Number of Pills</th>
+              <th className="py-2 px-4 border-b">Date Prescribed</th>
+              <th className="py-2 px-4 border-b">Expiration Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tokens.map((token, index) => (
+              <tr key={index}>
+                <td className="py-2 px-4 border-b">{token.transactionHash.slice(0, 6)}...{token.transactionHash.slice(-4)}</td>
+                <td className="py-2 px-4 border-b">{token.walletAddress.slice(0, 6)}...{token.walletAddress.slice(-4)}</td>
+                <td className="py-2 px-4 border-b">{token.recipientAddress.slice(0, 6)}...{token.recipientAddress.slice(-4)}</td>
+                <td className="py-2 px-4 border-b">{token.amount}</td>
+                <td className="py-2 px-4 border-b">{token.medicationName}</td>
+                <td className="py-2 px-4 border-b">{`${token.dosage} ${token.dosageUnit}`}</td>
+                <td className="py-2 px-4 border-b">{token.numPills}</td>
+                <td className="py-2 px-4 border-b">{token.dateFilled}</td>
+                <td className="py-2 px-4 border-b">{token.expirationTime}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div className="flex justify-end mt-4">
+          <button
+            onClick={onClose}
+            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          >
+            Close
+          </button>
+        </div>
       </div>
     </div>
   );
