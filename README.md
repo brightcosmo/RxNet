@@ -13,7 +13,3 @@ RxNet is a cutting-edge platform designed to tackle the rising misuse of prescri
 - **User Access Control**: Manage and control access to prescription information effectively.
 - **Addiction Prevention**: Tools and analytics to identify and prevent misuse of prescription drugs.
 - **Public Health Insights**: Aggregated data to support long-term health strategies.
-
-## Pitching Video
-
-https://youtu.be/6KLZUyNAn7k
