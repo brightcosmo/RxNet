@@ -5,7 +5,7 @@ const PrescriptionTable = () => {
 
   const handleSearch = () => {
     // Construct the URL using the transactionHash
-    const externalUrl = `https://explorer-testnet.maschain.com/${transactionHash}`;
+    const externalUrl = `https://explorer.solana.com/tx/${transactionHash}?cluster=devnet`;
     
     // Open the external URL in a new tab or window
     window.open(externalUrl, '_blank');
@@ -14,8 +14,8 @@ const PrescriptionTable = () => {
   return (
     <div className="p-4">
       <div className="mb-4">
-        <label htmlFor="transactionHash" className="block mb-2 text-base lg:text-lg text-black-100 font-medium mt-6">
-          Enter Transaction Hash
+        <label htmlFor="transactionHash" className="block mb-2 text-base lg:text-lg text-white font-medium mt-6">
+          Verify a transaction hash
         </label>
         <input
           type="text"

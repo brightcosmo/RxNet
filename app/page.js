@@ -45,7 +45,7 @@ export default function Home() {
   console.log(tokens)
   
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-teal-300 via-cyan-400 to-blue-500">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-[#14F195] via-blue-400 to-[#9945FF]">
       <h1 className="font-extrabold text-4xl lg:text-6xl text-center text-white drop-shadow-lg z-0">
         The future of prescriptions.
       </h1>
@@ -114,6 +114,15 @@ export default function Home() {
         )}
       </AnimatePresence>
       <PrescriptionTable />
+      <div className="flex items-center mt-8">
+        <span className="text-white font-semibold mr-2">Powered by</span>
+        <img
+          src="https://cryptologos.cc/logos/solana-sol-logo.png"
+          alt="Solana Logo"
+          className="w-6 h-6"
+        />
+        <span className="text-white font-semibold ml-2">Solana</span>
+      </div>
       <ToastContainer
         position="bottom-center"
         autoClose={5000}

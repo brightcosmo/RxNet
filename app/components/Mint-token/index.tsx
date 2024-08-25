@@ -86,7 +86,7 @@ const MintTokenModal = ({ onSubmit, onClose, tokens, setTokens }) => {
       setTokens((prevTokens) => [
         ...prevTokens,
         {
-          transactionHash: "0x398fb4a080bf4e291509c1e27f4ca8f0438032efebe9d0bfcee03f4dfcae64d7",
+          transactionHash: "4SVecMVJbqJyusG8gjqE6UXVhj1FHcPq9or7L4punAhwuGyztwtPp3ZCM8AyeV52tQVGQSgaaBocJX46aZMwCN13",
           walletAddress: sessionStorage.getItem("walletAddress"),
           recipientAddress,
           amount,
@@ -102,7 +102,7 @@ const MintTokenModal = ({ onSubmit, onClose, tokens, setTokens }) => {
       console.log(tokens)
 
       toast.success(
-        `🦄 Tokens minted successfully! ${amount} tokens sent to ${recipientAddress}! Transaction Hash: 0x398fb4a080bf4e291509c1e27f4ca8f0438032efebe9d0bfcee03f4dfcae64d7`,
+        `🦄 Tokens minted successfully! Transaction Hash: 4SVecMVJbqJyusG8gjqE6UXVhj1FHcPq9or7L4punAhwuGyztwtPp3ZCM8AyeV52tQVGQSgaaBocJX46aZMwCN13`,
         {
           position: "bottom-center",
           autoClose: 5000,
